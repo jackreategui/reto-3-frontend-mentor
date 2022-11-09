@@ -37,9 +37,24 @@ figure{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-figure img{
+.view{
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.view:hover{
+    background-color: var(--Cyan);
+    opacity: 100%;
+    background-size: contain;
+}
+
+figure img:nth-child(2){
     width: 100%;
     height: 100%;
     position: relative;
