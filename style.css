@@ -1,6 +1,6 @@
 :root{
     --Soft-blue: hsl(215, 51%, 70%);
-    --Cyan: hsl(178, 100%, 50%);
+    --Cyan: rgb(0, 255, 247);
     --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
     --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
     --Very-dark-blue-line: hsl(215, 32%, 27%);
@@ -42,23 +42,46 @@ figure{
     justify-content: center;
 }
 
-.view{
-    opacity: 0;
-    position: absolute;
-    z-index: 1;
+.capa{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.view:hover{
-    background-color: var(--Cyan);
-    opacity: 100%;
-    background-size: contain;
+figure{
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
-figure img:nth-child(2){
+figure img{
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 5px;
+}
+
+.capa{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 255, 247, 0.5);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.capa:hover{
+    opacity: 100;
+}
+
+.view{
+    opacity: 100;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    z-index: 100;
 }
 
 .conteinner-button{
@@ -72,6 +95,11 @@ figure img:nth-child(2){
 .conteinner-button h1{
     color: var(--White);
     font-size: 16px;
+    cursor: pointer;
+}
+
+.conteinner-button h1:hover{
+    color: var(--Cyan);
 }
 
 .conteinner-button p{
@@ -143,4 +171,8 @@ figure img:nth-child(2){
 a{
     text-decoration: none;
     color: var(--White);
+}
+
+a:hover{
+    color: var(--Cyan);
 }
